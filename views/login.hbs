@@ -1,0 +1,81 @@
+{{!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <!-- My Style -->
+  <link href="/css/LoginStyle.css" rel="stylesheet" type="text/css" />
+  
+</head>
+
+<body> --}}
+
+<div class="container-custom">
+  <div class="container-login">
+
+    <div class="wrap-login">
+
+      <form action="/loginProcess" method="POST" class="login-form validate-form">
+
+        {{#if message}}
+        <div class="alert alert-warning alert-dismissible fade show">
+          <strong>{{message}}</strong>
+        </div>
+        {{/if}}
+
+        <span class="login-form-title">
+          ADMIN LOGIN
+        </span>
+
+        <div class="wrap-input rs1">
+          <input class="input" class="form-control" type="text" name="email">
+          <label class="label-input">EMAIL</label>
+        </div>
+
+        <div class="wrap-input rs2">
+          <input class="input" class="form-control" type="password" name="password">
+          <span class="label-input">PASSWORD</span>
+        </div>
+
+        <div class="container-login-form-btn">
+          <button type="submit" class="login-form-btn">
+            Sign in
+          </button>
+        </div>
+
+        <div class="container-txt">
+          <a href="#" class="txt1">
+            Forgot password?
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $(document).ready(function () {
+    var $input = $('.input');
+    $input.focusout(function () {
+      if ($(this).val().length > 0) {
+        $(this).addClass('input-focus');
+        $(this).next('.label-input').addClass('label-focus');
+      } else {
+        $(this).removeClass('input-focus');
+        $(this).next('.label-input').removeClass('label-focus');
+      }
+    });
+  });
+
+</script>
+{{!-- 
+</body>
+
+</html> --}}

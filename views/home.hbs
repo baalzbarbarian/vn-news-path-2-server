@@ -1,0 +1,116 @@
+<div class="container-fluid h-100 container-custom">
+    <div class="row vertical-nav h-100">
+        <div class="col-2 border-right border-white" id="side-bar">
+            <div class="row txt-hello">
+                <h4 class="text-white text-center font-weight-bold px-2 large py-3 mb-0 w-100">Hello {{user}}!</h4>
+            </div>
+
+            <div class="row ">
+                <ul class="nav flex-column sidebar-nav">
+                    <li class="nav-item p-2">
+                        <a href="/home" class="nav-link text-white">
+                            <i class="fa fa-home fa-lg active" aria-hidden="true"></i>
+                            Trang Chủ
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown p-2 sidebar-brand">
+                        <a href="#" class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#"
+                            role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-th-large fa-lg" aria-hidden="true"></i>
+                            Quản Lý Dữ Liệu
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-lg-right">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/category">Loại Tin</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/news/newsCreate">Thêm Tin</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row logout">
+                <a class="signout text-white" name="signout" id="signout" href="/signOut">Đăng Xuất</a>
+            </div>
+        </div>
+
+        <div class="col myDataBase">
+            <h4 class="text-center m-3">Tin Tức Tổng Hợp</h4>
+            <div class="row m-2 shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="col">
+                    {{#if createMessage}}
+                    <div class="alert alert-warning alert-dismissible fade show">
+                        <strong>{{createMessage}}</strong>
+                    </div>
+                    {{/if}}
+                    {{#if updateMessage}}
+                    <div class="alert alert-warning alert-dismissible fade show">
+                        <strong>{{updateMessage}}</strong>
+                    </div>
+                    {{/if}}
+                    {{#if deleteMessage}}
+                    <div class="alert alert-warning alert-dismissible fade show">
+                        <strong>{{deleteMessage}}</strong>
+                    </div>
+                    {{/if}}
+                    <table class="table display compact table-bordered hover" id="mydatatable">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="text-center text-white showNewsCat">Loại Tin</th>
+                                <th class="text-center text-white showMatter">Chủ Đề</th>
+                                <th class="text-center text-white showContent">Nội Dung</th>
+                                <th class="text-center text-white showAuthor">Tác Giả</th>
+                                <th class="text-center text-white showDate">Ngày Đăng</th>
+                                <th class="text-center text-white showImage">Ảnh</th>
+                                <th class="text-center text-white showImage">Quản Lý</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each newsData}}
+                            <tr>
+                                <td class="text-center showNewsCat w-15">
+                                    <p class="data text-center p-1 pt-2">{{NewsCat}}</p>
+                                </td>
+                                <td class="text-center showMatter w-15">
+                                    <p class="data text-center p-1 pt-2 ">{{Matter}}</p>
+                                </td>
+                                <td class="text-center showContent w-35">
+                                    <p class="data text-center p-1 pt-2 ">{{Content}}</p>
+                                </td>
+                                <td class="text-center showAuthor w-15">
+                                    <p class="data text-center p-1 pt-2">{{Author}}</p>
+                                </td>
+                                <td class="text-center showDate w-15">
+                                    <p class="data text-center p-1 pt-2">{{Date}}</p>
+                                </td>
+                                <td class="text-center showImage w-15">
+                                    <img class="img-thumbnail img-preview "
+                                        src="http://localhost:3000/uploads/{{Image}}" title="Hình ảnh" width="100"
+                                        height="100">
+                                </td>
+                                <td class="text-center p-1 pt-2">
+                                    <a href="/news/updateNews/{{_id}}">Update</a>
+                                    <a href="/news/deleteNews/{{_id}}"
+                                        onclick="return confirm('Bạn có chắc chắn muốn xoá?')">Delete</a>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#mydatatable').DataTable();
+    });
+</script>

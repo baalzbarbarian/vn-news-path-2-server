@@ -1,0 +1,408 @@
+@font-face {
+  src: url("../fonts/Ballo-Regular.ttf");
+  font-family: Ballo-Regular;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/**Home Style**/
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.txt-hello h4 {
+  background-color: rgb(0, 0, 0);
+  pointer-events: none;
+}
+
+#side-bar {
+  background: #2575fc;
+  background: -webkit-linear-gradient(right, #2575fc, #6a11cb);
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav li a {
+  display: block;
+  padding: 10px 15px 10px 30px;
+}
+
+.nav > .nav-item:hover,
+.nav > .nav-item:hover > .nav-link {
+  background: #6a11cb;
+  background: -webkit-linear-gradient(right, #6a11cb, #2575fc);
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu > .nav-item:hover,
+.dropdown-menu > .nav-item:hover > .nav-link {
+  background: #2575fc;
+  background: -webkit-linear-gradient(right, #2575fc, #6a11cb);
+  color: #fff;
+}
+
+.myDataBase {
+  background-color: rgba(241, 239, 239, 0.904);
+}
+
+.logout {
+  width: 16.64%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.signout {
+  font-size: 18px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  z-index: 1;
+  position: relative;
+  text-transform: uppercase;
+  overflow: hidden;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.signout::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  background: -webkit-linear-gradient(right, #f87b05, #f3e302);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  opacity: 0;
+  color: #6a11cb;
+}
+
+.signout:hover {
+  background: transparent;
+  text-decoration: none;
+}
+
+.signout:hover:before {
+  opacity: 1;
+}
+
+/**Login Style**/
+
+input {
+  outline: none;
+  border: none;
+}
+
+button {
+  outline: none !important;
+  border: none;
+  background: transparent;
+}
+
+.container-custom {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-login {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #2575fc;
+  background: -webkit-linear-gradient(left, #6a11cb, #2575fc);
+}
+
+.wrap-login {
+  width: 560px;
+}
+
+/*Form */
+
+.login-form {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login-form-title {
+  width: 100%;
+  display: block;
+  font-family: Ballo-Regular;
+  font-size: 30px;
+  color: #fefefe;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wrap-input {
+  display: flex;
+  align-items: flex-end;
+  width: 50%;
+  height: 75px;
+  position: relative;
+  border: 1px solid #e0e0e0;
+  border-bottom: none;
+  background-color: #fff;
+}
+
+.wrap-input.rs1 {
+  border-top-left-radius: 12px;
+  border-right: none;
+}
+
+.wrap-input.rs2 {
+  border-top-right-radius: 12px;
+}
+
+.label-input {
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.2;
+
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  padding-left: 30px;
+  left: 0;
+  top: 28px;
+
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.input {
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.2;
+
+  display: block;
+  width: 100%;
+  background: transparent;
+  padding: 0 30px;
+}
+
+input.input {
+  height: 100%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.input:focus {
+  height: 50px;
+}
+
+.input:focus + .label-input {
+  top: 10px;
+  font-size: 15px;
+  color: #111111;
+}
+
+.input-focus {
+  height: 50px !important;
+}
+
+.label-focus {
+  top: 10px;
+  font-size: 15px;
+  color: #2575fc;
+}
+
+/* Button */
+.container-login-form-btn {
+  width: 100%;
+}
+
+.login-form-btn {
+  font-family: Ballo-Regular;
+  font-size: 15px;
+  color: #fff;
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 20px;
+  width: 100%;
+  height: 70px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  overflow: hidden;
+  background: #111111;
+
+  position: relative;
+  z-index: 1;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login-form-btn::before {
+  content: "";
+  display: block;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+
+  position: absolute;
+  background: -webkit-linear-gradient(right, #6a11cb, #2575fc);
+
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login-form-btn:hover {
+  background-color: transparent;
+}
+
+.login-form-btn:hover:before {
+  opacity: 1;
+}
+
+.container-txt {
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.txt1 {
+  font-family: Ballo-Regular;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #e0dede;
+}
+
+a {
+  font-family: Ballo-Regular;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666666;
+  margin: 0px;
+  text-decoration-line: none;
+
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+}
+
+a:focus {
+  outline: none !important;
+}
+
+a.txt1:hover {
+  text-decoration: none;
+  color: rgb(247, 112, 2);
+}
+
+/**Welcome Style**/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  /* background: -webkit-linear-gradient(right, #6a11cb, #2575fc); */
+  background-color: #2575fc;
+}
+
+.container-mt {
+  margin-top: 200px;
+}
+
+.container-custom {
+  border: none;
+  background: transparent;
+  font-family: Ballo-Regular;
+}
+
+.container-custom-register {
+  height: 100%;
+  width: 100%;
+  background: -webkit-linear-gradient(right, #6a11cb, #2575fc);
+}
+
+/**Category Style**/
+
+.container-cat {
+  display: inline;
+}
+.container-cat-left {
+  float: left;
+}
+.container-cat-right {
+  float: right;
+}
+
+.addForm {
+  overflow: hidden;
+  position: relative;
+}
+
+.updateForm {
+  overflow: hidden;
+  position: relative;
+  display: none;
+}
+
+.table>.showNewsCat {
+  width: 15%;
+}
+
+.table>.showMatter {
+  width: 20%;
+}
+
+.table>.showContent {
+  width: 35%;
+}
+
+.table>.showAuthor {
+  width: 10%;
+}
+
+.table>.showDate {
+  width: 10%;
+}
+
+table>.showImage {
+
+}
+
+.btn-custom_reg {
+  background-color: #d2511a;
+}
+
+.btn-custom_log {
+  background-color: #666666;
+}
